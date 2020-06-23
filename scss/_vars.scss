@@ -1,0 +1,45 @@
+$bg: #151c24;
+$text: #fff;
+$text2: #999999;
+$grey: #787878;
+$red: #ff3e3e;
+$block: #252c35;
+$border: #2e3640;
+$green: #3aab3f;
+
+@mixin f300 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+@mixin f400 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+@mixin f500 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+@mixin f700 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+@mixin f900 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+@mixin bebas {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 900;
+}
+
+@mixin gradient {
+    background: #252c35;
+background: linear-gradient(180deg, rgba(48,55,63,0.9) 0%, rgba(36,42,51,0.9) 100%);
+}
+
+
+
+
+

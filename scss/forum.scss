@@ -1,0 +1,221 @@
+@import '_vars';
+@import '_mixins';
+
+//start forum page
+.forum__inner {
+  border-left: 1px solid $border;
+  border-right: 1px solid $border;
+  padding: 35px 10px;
+}
+
+.forum-page-title {
+  margin-bottom: 20px;
+}
+
+.forum__articles {
+  margin-bottom: 20px;
+}
+
+.forum-article {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 60px;
+  background-color: #252c35;
+  border: 1px solid #343d48;
+  border-bottom: none;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.11) 0%,
+      rgba(255, 255, 255, 0.11) 100%
+    );
+  }
+
+  &.forum-article:last-child {
+    border-bottom: 1px solid #343d48;
+  }
+}
+
+.forum-article-img {
+  padding: 0 15px;
+
+  img {
+    display: block;
+    width: 45px;
+    max-height: 38px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.forum__article-author-thema-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 1px solid $border;
+  height: 60px;
+  width: 250px;
+  padding: 0 10px;
+}
+
+.forum__article-thema {
+  display: flex;
+  flex-direction: column;
+  width: 665px;
+}
+
+.forum__article-thema-title {
+  font-size: 16px;
+  @include f400;
+  color: #fff;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+}
+
+.forum__article-thema-content {
+  font-size: 14px;
+  color: $text2;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+}
+
+.forum__article-info {
+  display: flex;
+  justify-content: space-around;
+  max-width: 150px;
+  width: 100%;
+  @include f500;
+  font-size: 12px;
+  color: $text2;
+}
+
+.forum__article-comments {
+  position: relative;
+  padding-left: 25px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-image: url(/images/icons/article-page/comments.png);
+    width: 16px;
+    height: 14px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.forum__article-author {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-around;
+}
+
+.author-thema {
+  text-align: end;
+}
+
+.author-thema-name {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+}
+
+.author-thema-time {
+  font-size: 12px;
+  color: $text2;
+  text-align: left;
+}
+
+.author-thema-avatar {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.forum__title {
+  color: $text2;
+  font-size: 16px;
+  @include f500;
+  margin: 5px 0;
+  padding: 0 40px 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  background: rgb(37, 44, 53);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 44, 53, 1) 0%,
+    rgba(48, 60, 77, 1) 48%,
+    rgba(48, 60, 77, 1) 52%,
+    rgba(37, 44, 53, 1) 100%
+  );
+  margin-bottom: 5px;
+}
+
+//end forum page
+
+@media (max-width: 920px) {
+  .forum-article {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  .author-thema {
+    display: flex;
+  }
+
+  .author-thema-name {
+    margin-right: 10px;
+  }
+
+  .forum__article-thema {
+    width: auto;
+  }
+  .forum-article-img {
+    width: 10%;
+  }
+  .forum__article-thema {
+    width: 70%;
+  }
+  .forum__article-info {
+    height: 60px;
+    width: 20%;
+    flex-direction: column;
+  }
+  .forum__article-author,
+  .forum__article-author-thema-box {
+    width: 100%;
+  }
+  .forum__article-author-thema-box {
+    border-left: none;
+    border-top: 1px solid $border;
+    justify-content: space-between;
+  }
+}
