@@ -14,6 +14,9 @@
 
 .forum__articles {
   margin-bottom: 20px;
+  .forum-article:nth-child(odd) {
+    background-color: darken($color: #252c35, $amount: 2%);
+  }
 }
 
 .forum-article {
@@ -92,19 +95,16 @@
   display: -webkit-box;
 }
 
-.forum__article-info {
+.forum__article-comments {
+  position: relative;
+
   display: flex;
   justify-content: space-around;
-  max-width: 150px;
+  max-width: 80px;
   width: 100%;
   @include f500;
   font-size: 12px;
   color: $text2;
-}
-
-.forum__article-comments {
-  position: relative;
-  padding-left: 25px;
 
   &::before {
     position: absolute;
@@ -182,40 +182,84 @@
 //end forum page
 
 @media (max-width: 920px) {
+  .author-thema {
+    display: none;
+  }
+  .forum__article-author-thema-box {
+    border-left: none;
+    width: auto;
+  }
+  .forum__article-author {
+    border-left: 1px solid $border;
+  }
+  .author-thema-avatar {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
   .forum-article {
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 10px;
+  }
+  .forum__article-thema {
+    width: 85%;
+    padding: 5px;
+  }
+  .forum-article-img {
+    padding: 5px;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .forum__article-info {
+    max-width: 1000px;
+    display: flex;
+    width: 50%;
+    height: 40px;
+    align-items: center;
+    border-top: 1px solid $border;
+  }
+
+  .forum__article-author-thema-box {
+    height: auto;
   }
   .author-thema {
     display: flex;
   }
-
   .author-thema-name {
-    margin-right: 10px;
+    display: none;
   }
-
-  .forum__article-thema {
-    width: auto;
+  .forum__article-comments {
+    min-width: 30%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $border;
   }
-  .forum-article-img {
-    width: 10%;
-  }
-  .forum__article-thema {
+  .forum__article-author {
+    display: flex;
     width: 70%;
+    height: 48px;
+    align-items: center;
+    border-top: 1px solid $border;
   }
-  .forum__article-info {
-    height: 60px;
-    width: 20%;
-    flex-direction: column;
+  .forum__article-comments::before {
+    left: 10%;
   }
-  .forum__article-author,
   .forum__article-author-thema-box {
     width: 100%;
+    justify-content: center;
   }
-  .forum__article-author-thema-box {
-    border-left: none;
-    border-top: 1px solid $border;
-    justify-content: space-between;
+  .author-thema {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 470px) {
+  .forum__article-thema-content {
+    -webkit-line-clamp: 2;
+  }
+  .forum-article-img {
   }
 }
