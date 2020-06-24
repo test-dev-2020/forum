@@ -21,11 +21,7 @@
 }
 
 .forum__article-thema {
-  padding: 10px;
-}
-
-.forum__article-thema-content {
-  -webkit-line-clamp: 2;
+  padding: 0 10px;
 }
 
 @media (max-width: 600px) {
